@@ -1,0 +1,14 @@
+body {
+  font-family: Fredoka, sans-serif;
+}
+
+#sct-navbar {
+  font-size: 24px;
+}
+
+#sct-areajuego button {
+  border: 1px solid;
+  padding: 10px 12px;
+  margin: 2px;
+}
+/*# sourceMappingURL=base.css.map */
