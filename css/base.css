@@ -6,6 +6,19 @@ body {
   font-size: 24px;
 }
 
+#sct-controles .container-fluid {
+  max-width: 50%;
+}
+
+#sct-controles img {
+  max-height: 300px;
+  max-width: 60%;
+}
+
+#sct-controles input {
+  letter-spacing: 3px;
+}
+
 #sct-areajuego button {
   border: 1px solid;
   padding: 10px 12px;
