@@ -56,12 +56,12 @@ const comprobar = (n) => {
     let indicador = 0;
     matriz.forEach(element => {
         if (n == element.toUpperCase()) {
-            console.log('True ' + element)
+            //console.log('True ' + element)
             extraerReemplazar(n);
             indicador++;
             contador++;
         } else {
-            console.log('False ' + element)
+            //console.log('False ' + element)
         }
     });
 
