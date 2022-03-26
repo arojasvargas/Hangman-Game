@@ -10,18 +10,59 @@ body {
   max-width: 50%;
 }
 
+#sct-controles .turnos {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+#sct-controles .marcador {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+#sct-controles button {
+  -webkit-box-shadow: 0px 5px 4px #888888;
+          box-shadow: 0px 5px 4px #888888;
+}
+
 #sct-controles img {
   max-height: 300px;
   max-width: 60%;
 }
 
-#sct-controles input {
+#sct-controles .palabras {
   letter-spacing: 3px;
+  -webkit-box-shadow: 0px 5px 10px #888888;
+          box-shadow: 0px 5px 10px #888888;
 }
 
-#sct-areajuego button {
+#sct-areajuego .container {
+  padding: 0px 100px;
+  max-width: 50%;
+}
+
+#sct-areajuego input {
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 10px #888888;
+          box-shadow: 0px 5px 10px #888888;
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background-color: #06F;
+}
+
+#sct-areajuego input:hover {
+  color: #06F;
+  background-color: #FFF;
   border: 1px solid;
-  padding: 10px 12px;
-  margin: 2px;
+  border-color: #06F;
 }
 /*# sourceMappingURL=base.css.map */
