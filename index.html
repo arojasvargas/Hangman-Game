@@ -27,25 +27,25 @@
         <section id="sct-controles">
             <div class="container-fluid py-5">
                 <div class="row align-items-center">
-                    <div class="col-6 text-center">
+                    <div class="col-12 col-md-6 text-center">
                         <img src="resources/hangman.jpg" class="rounded m-1 img-fluid" alt="Game title">
                     </div>
-                    <div class="col-3 text-center">
+                    <div class="col-md-3 col-sm-12 text-center">
                         <h3>Turnos jugados</h3>
                         <div class="row align-middle">
-                            <div class="col">
-                                <input type="text" class="turnos text-center" value="0">
+                            <div class="col mb-1">
+                                <input type="text" class="turnos text-center" value="0" id="txt-turnos" readonly>
                             </div>
                         </div>
                     </div>
-                    <div class="col-3 text-center">
+                    <div class="col-md-3 col-sm-12 text-center">
                         <h3>Marcador</h3>
                         <div class="row align-middle">
                             <div class="col-6">
-                                <input type="text" class="marcador text-center" value="0">
+                                <input type="text" class="marcador text-center" value="0" id="txt-marcador-jugador" readonly>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="marcador text-center" value="0">
+                                <input type="text" class="marcador text-center" value="0" id="txt-marcador-computadora" readonly>
                             </div>
                         </div>
                         <div class="row align-middle">
@@ -67,43 +67,43 @@
             </div>
         </section>
         <section id="sct-areajuego">
-            <div class="container px-5 mb-5">
+            <div class="container p-0 mb-5">
                 <div class="row">
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('A')" value="    A    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('B')" value="    B    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('C')" value="    C    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('D')" value="    D    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('E')" value="    E    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('F')" value="    F    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="A" onclick="comprobar('A')" value="    A    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="B" onclick="comprobar('B')" value="    B    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="C" onclick="comprobar('C')" value="    C    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="D" onclick="comprobar('D')" value="    D    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="E" onclick="comprobar('E')" value="    E    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="F" onclick="comprobar('F')" value="    F    "></div>
                 </div>
                 <div class="row">
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('G')" value="    G    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('H')" value="    H    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('I')" value="    I    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('J')" value="    J    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('K')" value="    K    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('L')" value="    L    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="G" onclick="comprobar('G')" value="    G    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="H" onclick="comprobar('H')" value="    H    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="I" onclick="comprobar('I')" value="    I    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="J" onclick="comprobar('J')" value="    J    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="K" onclick="comprobar('K')" value="    K    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="L" onclick="comprobar('L')" value="    L    "></div>
                 </div>
                 <div class="row">
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('M')" value="    M    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('N')" value="    N    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('Ñ')" value="    Ñ    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('O')" value="    O    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('P')" value="    P    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('Q')" value="    Q    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="M" onclick="comprobar('M')" value="    M    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="N" onclick="comprobar('N')" value="    N    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="Ñ" onclick="comprobar('Ñ')" value="    Ñ    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="O" onclick="comprobar('O')" value="    O    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="P" onclick="comprobar('P')" value="    P    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="Q" onclick="comprobar('Q')" value="    Q    "></div>
                 </div>
                 <div class="row">
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('R')" value="    R    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('S')" value="    S    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('T')" value="    T    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('U')" value="    U    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('V')" value="    V    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('W')" value="    W    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="R" onclick="comprobar('R')" value="    R    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="S" onclick="comprobar('S')" value="    S    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="T" onclick="comprobar('T')" value="    T    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="U" onclick="comprobar('U')" value="    U    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="V" onclick="comprobar('V')" value="    V    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="W" onclick="comprobar('W')" value="    W    "></div>
                 </div>
                 <div class="row">
-                    <div class="offset-2 col-2 text-center"><input type="button" onclick="comprobar('X')" value="    X    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('Y')" value="    Y    "></div>
-                    <div class="col-2 text-center"><input type="button" onclick="comprobar('Z')" value="    Z    "></div>
+                    <div class="col-4 offset-md-2 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="X" onclick="comprobar('X')" value="    X    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="Y" onclick="comprobar('Y')" value="    Y    "></div>
+                    <div class="col-4 col-md-2 text-center"><input class="estilo-boton teclado" type="button" id="Z" onclick="comprobar('Z')" value="    Z    "></div>
                 </div>
             </div>
         </section>
