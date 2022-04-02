@@ -1,27 +1,33 @@
 'use strict';
 
-let diccionario = ['DONA', 'CRUZ', 'COLA', 'HOJA', 'GRUA', 'APODO', 'ACTOR', 'CHINA', 'DUBAI', 'LECHE', 'CUARZO', 'INGLES', 'ATAQUE', 'GLOBAL', 'VIAJAR', 'BOLIVIA', 'DOLARES', 'ECUADOR', 'PLANTAS', 'SEMANAS'];
+//let diccionario = ['DONA', 'CRUZ', 'COLA', 'HOJA', 'GRUA', 'APODO', 'ACTOR', 'CHINA', 'DUBAI', 'LECHE', 'CUARZO', 'INGLES', 'ATAQUE', 'GLOBAL', 'VIAJAR', 'BOLIVIA', 'DOLARES', 'ECUADOR', 'PLANTAS', 'SEMANAS'];
 let abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let palabraSeleccionada = '';
 let contadorBuenas = 0;
 let matriz = [];
 let turnos = 0;
+let result = '';
 
 const seleccionarPalabra = () => {
-        let num = Math.floor(Math.random() * 21);
-        return diccionario[num];
-    }
-    /*
-    function myFunction() {
-        var element = document.getElementsByClassName('teclado');
-        element.classList.add('estilo-boton');
-    }*/
+    let num = Math.floor(Math.random() * 21);
+    result = palabras.find((item) => item.id === num);
+    return result.palabra;
+}
+
+/*
+function myFunction() {
+    var element = document.getElementsByClassName('teclado');
+    element.classList.add('estilo-boton');
+}*/
 
 const reiniciar = () => {
     contadorBuenas = 0;
     turnos = 0;
     palabraSeleccionada = '';
     matriz = [];
+    document.getElementById('btn-pista').disabled = false;
+    document.getElementById('btn-pista').classList.remove('opcion-correcta');
+    document.getElementById('btn-pista').classList.remove('opcion-incorrecta');
     document.getElementById('txt-turnos').value = 0;
     document.getElementById('txt-palabra').value = '';
     document.getElementById('txt-intentos').value = '';
@@ -38,6 +44,7 @@ const partidaPerdida = () => {
         document.getElementById(element).classList.remove('estilo-boton');
         document.getElementById(element).classList.remove('opcion-correcta');
         document.getElementById(element).classList.add('opcion-incorrecta');
+        document.getElementById('btn-pista').classList.add('opcion-incorrecta');
         document.getElementById(element).disabled = true;
     });
 }
@@ -47,6 +54,7 @@ const partidaGanada = () => {
         document.getElementById(element).classList.remove('estilo-boton');
         document.getElementById(element).classList.remove('opcion-incorrecta');
         document.getElementById(element).classList.add('opcion-correcta');
+        document.getElementById('btn-pista').classList.add('opcion-correcta');
         document.getElementById(element).disabled = true;
     });
 }
@@ -84,6 +92,45 @@ const nuevoJuego = () => {
     }
 }
 
+const pista = () => {
+    let pista = result.pista;
+    turnos++;
+    document.getElementById('txt-turnos').value = turnos;
+    if (turnos < 10) {
+        Swal.fire({
+            icon: 'question',
+            title: '¿Necesitas ayuda?',
+            text: `${pista}`
+        });
+    }
+    estadoJuego(contadorBuenas, turnos);
+}
+
+const estadoJuego = (contador, contadorTurnos) => {
+    //El siguiente IF se ejecuta cuando se resuelve la palabra
+    let marcadorJugador = parseInt(document.getElementById('txt-marcador-jugador').value);
+    let marcadorComputadora = parseInt(document.getElementById('txt-marcador-computadora').value);
+    if (contador == matriz.length) {
+        Swal.fire({
+            icon: 'success',
+            title: 'FELICIDADES',
+            text: 'Ha adivinado la palabra'
+        });
+        document.getElementById('btn-pista').disabled = true;
+        document.getElementById('txt-marcador-jugador').value = marcadorJugador + 1;
+        partidaGanada();
+    } else if (contadorTurnos >= 10) {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Perdiste!',
+            text: 'No has logrado adivinar en menos de 10 turnos'
+        });
+        document.getElementById('btn-pista').disabled = true;
+        document.getElementById('txt-marcador-computadora').value = marcadorComputadora + 1;
+        partidaPerdida();
+    }
+}
+
 const comprobar = (n) => {
     let indicador = 0;
     matriz.forEach(element => {
@@ -106,24 +153,5 @@ const comprobar = (n) => {
         document.getElementById(n).classList.add('opcion-incorrecta');
         document.getElementById('txt-intentos').value += n;
     }
-    //El siguiente IF se ejecuta cuando se resuelve la palabra
-    let marcadorJugador = parseInt(document.getElementById('txt-marcador-jugador').value);
-    let marcadorComputadora = parseInt(document.getElementById('txt-marcador-computadora').value);
-    if (contadorBuenas == matriz.length) {
-        Swal.fire({
-            icon: 'success',
-            title: 'FELICIDADES',
-            text: 'Ha adivinado la palabra'
-        });
-        document.getElementById('txt-marcador-jugador').value = marcadorJugador + 1;
-        partidaGanada();
-    } else if (turnos >= 10) {
-        Swal.fire({
-            icon: 'error',
-            title: '¡Perdiste!',
-            text: 'No has logrado adivinar en menos de 10 turnos'
-        });
-        document.getElementById('txt-marcador-computadora').value = marcadorComputadora + 1;
-        partidaPerdida();
-    }
+    estadoJuego(contadorBuenas, turnos);
 }
