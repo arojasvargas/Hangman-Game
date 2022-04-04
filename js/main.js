@@ -1,6 +1,5 @@
 'use strict';
 
-//let diccionario = ['DONA', 'CRUZ', 'COLA', 'HOJA', 'GRUA', 'APODO', 'ACTOR', 'CHINA', 'DUBAI', 'LECHE', 'CUARZO', 'INGLES', 'ATAQUE', 'GLOBAL', 'VIAJAR', 'BOLIVIA', 'DOLARES', 'ECUADOR', 'PLANTAS', 'SEMANAS'];
 let abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let palabraSeleccionada = '';
 let contadorBuenas = 0;
@@ -13,12 +12,6 @@ const seleccionarPalabra = () => {
     result = palabras.find((item) => item.id === num);
     return result.palabra;
 }
-
-/*
-function myFunction() {
-    var element = document.getElementsByClassName('teclado');
-    element.classList.add('estilo-boton');
-}*/
 
 const reiniciar = () => {
     contadorBuenas = 0;
