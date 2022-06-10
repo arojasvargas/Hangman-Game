@@ -1,5 +1,7 @@
 # Hangman-Game
 
+This site is currently hosted in Azure. Try out the game [here](https://wonderful-island-0c799ea10.1.azurestaticapps.net)
+
 **Objective**
 Guess the word before your man gets hung!
 
